@@ -1,14 +1,10 @@
-{% load staticfiles %}
+{% extends "layouts/base.html" %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Testapp</title>
-</head>
-<body>
+{% block title %}
+    Homepage - {{ block.super }}
+{% endblock %}
 
-    <h1>Hello</h1>
-    <p>Tester basic</p>
-
-</body>
-</html>
+{% block content %}
+    <h1>Testside</h1>
+    <p>Her kan det skje mye gøy</p>
+{% endblock %}
