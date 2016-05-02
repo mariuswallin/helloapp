@@ -1,4 +1,5 @@
 {% extends "layouts/base.html" %}
+{% load humanize %}
 
 {% block title %}
     Homepage - {{ block.super }}
@@ -6,5 +7,9 @@
 
 {% block content %}
     <h1>Home</h1>
-    <p>Her kan det skje mye gøy</p>
+    <p>There are {{ number|apnumber }} of {{ thing|title }}{{ number|pluralize:"is" }}!</p>
 {% endblock %}
+
+{# slugiffy - lowercase
+title - title case
+truncatewords:1   #}
