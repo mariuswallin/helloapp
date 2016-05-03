@@ -7,7 +7,13 @@
 
 {% block content %}
     <h1>Home</h1>
-    <p>There are {{ number|apnumber }} of {{ thing|title }}{{ number|pluralize:"is" }}!</p>
+    {#<p>There are {{ number|apnumber }} of {{ aktivitet|title }}{{ number|pluralize:"is" }}!</p>#}
+    {% for akt in aktivitet %}
+
+    <h2>{{ akt.name }}</h2>
+    <p> {{ akt.description }}</p>
+        
+    {% endfor %}
 {% endblock %}
 
 {# slugiffy - lowercase

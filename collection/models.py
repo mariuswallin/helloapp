@@ -6,7 +6,7 @@ class Aktiviteter(models.Model):
     slug = models.SlugField(unique=True)
 
     class Meta:
-        verbose_name = 'Aktivitet'
+        verbose_name = 'Aktiviteter'
         verbose_name_plural = 'Aktiviteter'
 
 
