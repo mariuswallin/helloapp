@@ -10,12 +10,25 @@
     {#<p>There are {{ number|apnumber }} of {{ aktivitet|title }}{{ number|pluralize:"is" }}!</p>#}
     {% for akt in aktivitet %}
 
-    <h2>{{ akt.name }}</h2>
-    <p> {{ akt.description }}</p>
-        
+        <h2><a href="{% url 'aktivitet_detail' slug=akt.slug %}">{{ akt.name }}</a></h2>
+        <p>{{ akt.description }}</p>
+            
     {% endfor %}
 {% endblock %}
 
 {# slugiffy - lowercase
 title - title case
-truncatewords:1   #}
+truncatewords:1 #}
+
+{# 
+
+objects.get(variabel='hva du leter etter') error om ingen eller flere enn 1
+objects.filter(variabel='hva du leter etter') gir flere
+.order_by('name')
+name__contains='Hello' - innholde incomplete matches
+
+
+ #}
+
+
+
