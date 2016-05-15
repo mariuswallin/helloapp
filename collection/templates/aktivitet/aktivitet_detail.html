@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+    {{ aktivitet.name }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <h1> {{ aktivitet.name }}</h1>
+    <p>{{ aktivitet.description }}</p>
+    {% if user == aktivitet.user %}
+    <p><a href="{% url 'edit_aktivitet' slug=aktivitet.slug %}">Edit me!</a></p>
+        
+    {% endif %}
+      
+{% endblock %}
+
+
+

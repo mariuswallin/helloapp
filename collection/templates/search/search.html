@@ -1,0 +1,31 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Browse - {{ block.super }}{% endblock %}
+
+{% block content %}
+    
+    <h1>Browse Aktivitet {% if initial %} Starting with '{{ initial|title }}'{% endif %}</h1>
+
+    {% for letter in 'abcdefghijklmnopqrstuvwxyz' %}
+
+    <a href="{% url 'browse_by_name' initial=letter %}"
+
+        {% if initial == letter %} class="active" {% endif %}> {{ letter|upper }}</a>
+        
+    {% endfor %}
+
+    {% for akt in aktivitet %}
+
+        <ul>
+            <li>
+                <a href="{% url 'aktivitet_detail' slug=akt.slug %}">{{ akt.name }}</a>
+            </li>
+        </ul>    
+
+        {% empty %}
+
+        <p>Sorry, no result!</p>
+            
+    {% endfor %}
+
+{% endblock %}

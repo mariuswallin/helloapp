@@ -18,7 +18,7 @@
             {% if user.is_authenticated %}
                 <li><a href="{% url 'auth_logout' %}">Log Out</a></li>
                 {% else %}
-                <li><a href="{% url 'auth_loging' %}">Log In</a></li>
+                <li><a href="{% url 'auth_login' %}">Log In</a></li>
                 <li><a href="{% url 'registration_register' %}">Register</a></li>
             {% endif %}
         </ul>
