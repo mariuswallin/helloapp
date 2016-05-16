@@ -25,7 +25,8 @@ SECRET_KEY = 'j51-l#-py*rn@i@00v_fz*+r+(%2d(+mjujwvd01n-wg^u7d42'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# XXX: Update before launch
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -122,6 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 # Due to docs django-reduction-redux - how many days it can go before you ahve to activate your account
 
